@@ -2,8 +2,10 @@ def saque(*,saldo,valor,extrato,limite_saque):
     while True:
         print(f"saldo atual: {saldo}")
         valor=int(input("Quanto deseja sacar? "))
-        if valor<saldo:
+        if valor<=saldo:
             break
+        else:
+            print("valor sacado deve ser menor que saldo")
     if limite_saque>0 and saldo>0 and valor<500:
         saldo-=valor
         extrato+=f"quantidade sacada foi de R${valor} \n"
